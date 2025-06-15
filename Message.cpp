@@ -24,13 +24,13 @@ time_t Message::getTime() const
 	return time;
 }
 
-void Message::saveToFile(std::ofstream& os) {
+void Message::saveToFile(std::fstream& os) {
 	os.write((const char*)&time, sizeof(time_t));
 	this->sender.saveToFile(os);
 	this->message.saveToFile(os);
 }
 
-void Message::readFromFile(std::ifstream& is)
+void Message::readFromFile(std::fstream& is)
 {
 	is.read((char*)&time, sizeof(time_t));
 	this->sender.readFromFile(is);

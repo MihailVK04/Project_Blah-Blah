@@ -1,7 +1,6 @@
 #include "String.h"
 #include <cstring>
 #include <algorithm>
-#include "Sentences.h"
 #pragma warning (disable:4996)
 
 //static unsigned int nextRoundPowerOfTwo(unsigned int num) {
@@ -149,13 +148,13 @@ const char& String::operator[](size_t index) const
 	return data[index];
 }
 
-void String::saveToFile(std::ofstream& os)
+void String::saveToFile(std::fstream& os)
 {
 	os.write((const char*)&size, sizeof(size_t));
 	os.write((const char*)data, size * sizeof(char));
 }
 
-void String::readFromFile(std::ifstream& is)
+void String::readFromFile(std::fstream& is)
 {
 	is.read((char*)&size, sizeof(size_t));
 	allocDataSize = size + 1;

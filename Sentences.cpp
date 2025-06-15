@@ -34,10 +34,10 @@ String Sentences::getWords() const
 	return words;
 }
 
-void Sentences::saveToFile(std::ofstream& os) {
+void Sentences::saveToFile(std::fstream& os) {
 	words.saveToFile(os);
 }
 
-void Sentences::readFromFile(std::ifstream& is) {
+void Sentences::readFromFile(std::fstream& is) {
 	words.readFromFile(is);
 }

@@ -1,14 +1,15 @@
 #pragma once
 #include <iostream>
 #include <fstream>
+#include "Util.h"
 
-static unsigned int nextRoundPowerOfTwo(unsigned int num) {
-	unsigned int i = 1;
-	while (num >= i) {
-		i = i << 1;
-	}
-	return i;
-}
+//static unsigned int nextRoundPowerOfTwo(unsigned int num) {
+//	unsigned int i = 1;
+//	while (num >= i) {
+//		i = i << 1;
+//	}
+//	return i;
+//}
 
 class String {
 private:
@@ -40,8 +41,8 @@ public:
 	String operator+=(const String& other);
 	char& operator[](size_t index);
 	const char& operator[](size_t index) const;
-	void saveToFile(std::ofstream& os);
-	void readFromFile(std::ifstream& is);
+	void saveToFile(std::fstream& os);
+	void readFromFile(std::fstream& is);
 	friend std::ostream& operator<<(std::ostream& os, const String& obj);
 	friend std::istream& operator>>(std::istream& is, String& ref);
 	friend String operator+(const String& lhs, const String& rhs);

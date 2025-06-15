@@ -17,6 +17,6 @@ public:
 	Sentences getMessage() const;
 	time_t getTime() const;
 	friend std::ostream& operator<<(std::ostream& os, Message& ref);
-	void saveToFile(std::ofstream& os);
-	void readFromFile(std::ifstream& is);
+	void saveToFile(std::fstream& os);
+	void readFromFile(std::fstream& is);
 };

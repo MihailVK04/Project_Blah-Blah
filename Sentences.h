@@ -6,8 +6,8 @@ private:
 	String words;
 public:
 	String getWords() const;
-	void saveToFile(std::ofstream& os);
-	void readFromFile(std::ifstream& is);
+	void saveToFile(std::fstream& os);
+	void readFromFile(std::fstream& is);
 	friend std::ostream& operator<<(std::ostream& os, Sentences& object);
 	friend std::istream& operator>>(std::istream& is, Sentences& object);
 };
